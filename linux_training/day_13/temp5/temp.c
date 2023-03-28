@@ -19,8 +19,6 @@ int main(){
 	pthread_create(&t2,NULL,th_fn,"Thread Two");
 	pthread_join(t1,NULL);
 	pthread_join(t2,NULL);
-
-	
 }
 
 
