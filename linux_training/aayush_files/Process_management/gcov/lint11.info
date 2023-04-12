@@ -1,0 +1,15 @@
+TN:
+SF:/home/vboxuser/Desktop/Linux_Training/gcov/lint11.c
+FN:3,main
+FNDA:1,main
+FNF:1
+FNH:1
+DA:3,1
+DA:5,1
+DA:7,1
+DA:8,1
+DA:12,0
+DA:14,1
+LF:6
+LH:5
+end_of_record
