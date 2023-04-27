@@ -5,8 +5,11 @@ class Student {
 	protected:int rollno;
 	protected:string name;
 
-	public:Student(){};
+	public:Student(){
+		cout << "Hello\n";
+	};
 	public:Student(int rollno,string name){
+		cout << rollno << " " << name << "\n";
 		this->rollno = rollno;
 		this->name=name;
 	}
@@ -20,7 +23,7 @@ class Student {
 class Test:public virtual Student {
 	protected:int testMarks;
 
-	public:Test(int rollno,string name,int testMarks):Student(rollno,name){
+	public:Test(int testMarks):Student(){
 		this->testMarks=testMarks;
 	}
 };
@@ -28,7 +31,7 @@ class Test:public virtual Student {
 class Practical:public virtual Student {
 	protected:int practicalMarks;
 
-	public:Practical(int practicalMarks):Student(){
+	public:Practical(int rollno,string name,int practicalMarks):Student(rollno,name){
 		this->practicalMarks=practicalMarks;
 	}
 };
@@ -36,7 +39,7 @@ class Practical:public virtual Student {
 class Result :public Test,Practical {
 	protected:int totalMarks;
 
-	public:Result(int rollno,string name,int testMarks,int practicalMarks):Test(rollno,name,testMarks),Practical(practicalMarks) {
+	public:Result(int rollno,string name,int testMarks,int practicalMarks):Test(testMarks),Practical(rollno,name,practicalMarks) {
 		this->totalMarks = this->testMarks + this->practicalMarks;
 	}
 
